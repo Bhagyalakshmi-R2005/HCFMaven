@@ -1,0 +1,14 @@
+trigger:
+	- main
+pool:
+	name: Default
+stages:
+
+- script: echo hello, it's my azure devops APp
+displayName: 'Run the echo command'
+
+-script: gradle clean build
+displayName: 'Build with Gradle'
+
+-script: java -jar build/libs/HCF-0.0.1-SNAPSHOT.jar
+displayName: 'Run the jar file'
